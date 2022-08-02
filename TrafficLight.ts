@@ -1,26 +1,31 @@
 export {}
-
+/*
 const RED:string = "RED"
 const AMBER:string = "AMBER"
 const GREEN:string = "GREEN"
+*/
 
+enum States {
+    Red,
+    Amber,
+    Green
+}
 
-
-let state: string = RED
+let state: States = States.Red
 let light : string;
 function changeLights(){
     switch(state){
-        case(RED):
+        case(States.Red):
         light= "Red"
-        state = AMBER;
+        state = States.Amber;
         break
-        case(AMBER):
+        case(States.Amber):
         light = "Amber"
-        state = GREEN;
+        state = States.Green;
         break
-        case(GREEN):
+        case(States.Green):
         light ="Green"
-        state = RED;
+        state = States.Red;
         break
     }
 

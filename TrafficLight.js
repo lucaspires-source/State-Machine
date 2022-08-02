@@ -1,23 +1,31 @@
 "use strict";
 exports.__esModule = true;
-var RED = "RED";
-var AMBER = "AMBER";
-var GREEN = "GREEN";
-var state = RED;
+/*
+const RED:string = "RED"
+const AMBER:string = "AMBER"
+const GREEN:string = "GREEN"
+*/
+var States;
+(function (States) {
+    States[States["Red"] = 0] = "Red";
+    States[States["Amber"] = 1] = "Amber";
+    States[States["Green"] = 2] = "Green";
+})(States || (States = {}));
+var state = States.Red;
 var light;
 function changeLights() {
     switch (state) {
-        case (RED):
+        case (States.Red):
             light = "Red";
-            state = AMBER;
+            state = States.Amber;
             break;
-        case (AMBER):
+        case (States.Amber):
             light = "Amber";
-            state = GREEN;
+            state = States.Green;
             break;
-        case (GREEN):
+        case (States.Green):
             light = "Green";
-            state = RED;
+            state = States.Red;
             break;
     }
     console.log(light);
